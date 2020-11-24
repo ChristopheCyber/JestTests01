@@ -1,6 +1,6 @@
 // const googleSearch1 = require('./script');
 // const {googleSearch1,googleDb1} = require('./script');
-const myImports = require('./script');
+const myImports = require('./script1');
 const googleSearch1 = myImports.googleSearch1;
 const googleDb1 = myImports.googleDb1;
 
@@ -14,10 +14,9 @@ const googleDbMock = [
     'favorite-cat2.com',
 ];
 // it() <=> test() ; it is an ALIAS for test
-describe('Group I.1 testing correct inputs', () => {
-    it('test I.1.1: finding', () => {
-        console.log("googleSearch1=",googleSearch1);
-        console.log("googleDb1=",googleDb1);
+describe('Group Script1.I testing correct inputs', () => {
+    it('test Script1.I.1: finding', () => {
+        console.log("Test Script1.I.1 =>findPeoplePromise() googleSearch1=",googleSearch1,"; googleDb1=",googleDb1);
     
         console.log("googleSearch1('soup',googleDb1)=",googleSearch1('soup',googleDb1));
         expect(googleSearch1('soup',googleDb1)).toStrictEqual([ 'soup.com' ]);
@@ -29,14 +28,14 @@ describe('Group I.1 testing correct inputs', () => {
         expect(googleSearch1('foo',googleDbMock)).toEqual([]);
     });
 });
-describe('Group I.2 testing incorrect inputs', () => {
-    it('test I.2.1: work with Undefined or Null input', () => {
+describe('Group Script1.II testing incorrect inputs', () => {
+    it('test Script1.II.1: work with Undefined or Null input', () => {
         var input1 = undefined;
         expect(googleSearch1('input1',googleDbMock)).toEqual([]);
         input1 = null;
         expect(googleSearch1('input1',googleDbMock)).toEqual([]);
     });
-    it('test I.2.2: returning 3 matches max', () => {
+    it('test Script1.II.2: returning 3 matches max', () => {
         expect(googleSearch1('.com',googleDbMock).length).toBe(3);
     });
 });
