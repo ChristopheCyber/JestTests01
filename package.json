@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "clear && jest --watch /*.js",
+    "jesthelp": "jest --help",
+    "jestConfig": "jest --showConfig"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
