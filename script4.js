@@ -1,6 +1,6 @@
 // const fetch = require('node-fetch');
 
-// 'fetch' is injected into this function, defaulting to use "node-fetch" (or 'fetch-ponyfill', 'isomorphic-fetch', etc)
+// 'fetch' is injected into this function, defaulting to use "node-fetch" 
 const findPeopleScript4 = (fetch) => {
     // defaulting to use "node-fetch":
     if (!fetch) { fetch = require('node-fetch'); }
@@ -15,7 +15,7 @@ const findPeopleScript4 = (fetch) => {
             };
         })
 };
-// 'fetch' is injected into this function, defaulting to use "node-fetch" (or 'fetch-ponyfill', 'isomorphic-fetch', etc)
+// 'fetch' is injected into this function, defaulting to use "node-fetch"
 function isRequestSuccessful(fetch) {
     if (!fetch) { fetch = require('node-fetch'); }
     return fetch(`https://swapi.py4e.com/api/people`)

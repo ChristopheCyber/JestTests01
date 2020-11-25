@@ -55,19 +55,22 @@ describe('Group Script2.IV: Testing Async fcts: method MOCK for .ASYNC .AWAIT', 
         const mockFetch = jest.fn().mockReturnValue(
             Promise.resolve({
                 json: () => Promise.resolve({
-                    count: 87,
+                    count: 77,
                     results: [1,2,3,4,5,6,7,8,9,10,11]
                 })
             })
         )
         //expecting 2 assertions called for validation :
-        expect.assertions(2);
+        expect.assertions(3);
+        //testing with the MOCK fn as parameter:
         await findPeoplePromise(mockFetch).then(
             (res) => {
                 console.log('Test Script2.IV.1 =>findPeoplePromise() res.count=', res.count);
-                expect(res.count).toEqual(87);
+                expect(res.count).toEqual(77);
             });
+        //some SPIES:
         await expect(mockFetch.mock.calls.length).toBe(1);
+        await expect(mockFetch).toBeCalledWith('https://swapi.py4e.com/api/people');
     });
 });
 
